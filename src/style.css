@@ -1,0 +1,59 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100vw;
+    height: 10vh;
+    text-align: center;
+}
+
+main {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: beige;
+    width: 300px;
+    height: 200px;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.lblNickname {
+    margin-bottom: 10px;
+    border: none;
+}
+
+.txtNickname {
+    margin-bottom: 10px;
+    height: 5vh;
+    border-radius: 7px;
+    border: none
+}
+
+.btnSubmit {
+    height: 7vh;
+    color: white;
+    background-color: rgb(13, 207, 13);
+    border-radius: 7px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
