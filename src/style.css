@@ -16,13 +16,13 @@ main {
     height: 90vh;
     display: flex;
     flex-direction: column;
-    
     justify-content: center;
     align-items: center;
 }
-
+/*********************************************************************************************************************************************/
 .login-container {
-    display: none;/* display: flex; */
+    display: none;
+    /* display: flex; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -30,11 +30,6 @@ main {
     background-color: beige;
     width: 300px;
     height: 200px;
-}
-
-.loginForm {
-    display: flex;
-    flex-direction: column;
 }
 
 .lblNickname {
@@ -58,29 +53,73 @@ main {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
+}
+/*********************************************************************************************************************************************/
+.topicGame-container{
+    display: none;
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: beige;
+    width: 500px;
+    height: 300px;
 }
 
-.question-container{
-   height: 20vw;
-   width: 25vw;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: xx-large;
+.topicGame-container > button > img {
+    width: 120px;
+    height: 150px;
 }
 
-.answer-container{
-    display: flex;
+.btn-topic {
+    color: white;
+    background-color: rgb(13, 207, 13);
+    border-radius: 7px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+}
+
+.topic-name-one {
+    font-size: large;
+}
+
+.topic-name-two {
+    font-size: large;
+}
+
+/*********************************************************************************************************************************************/
+.question-container {
+    display: none;
+    height: 20vw;
+    width: 25vw;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+}
+/*********************************************************************************************************************************************/
+.answer-container {
+    display: none;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.btnAnswer{
+.btnAnswer {
     width: 45vw;
     height: 20vh;
     font-size: xx-large;
     margin-top: 10px;
     margin-right: 10px;
+}
+/*********************************************************************************************************************************************/
+.showElement {
+    display: flex;
 }
