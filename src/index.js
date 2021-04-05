@@ -2,7 +2,7 @@ const btnSubmit = document.getElementById("btnSubmit");
 const loginContainer = document.getElementById("login");
 const answerContainer = document.getElementById("answers");
 const questionContainer = document.getElementById("questions");
-const header = document.getElementById("header_");
+const header = document.getElementsByTagName('header');
 const txtNickName = document.getElementById("nickname");
 const topicGameContainer = document.getElementById("topicGame");
 
@@ -18,10 +18,10 @@ btnSubmit.addEventListener("click", function () {
 
 function WelcomeScreen(nameClass, action_) {
     if (action_ == "remove") {
-        header.classList.remove(nameClass);
+        header[0].classList.remove(nameClass);
         loginContainer.classList.remove(nameClass);
     } else {
-        header.classList.add(nameClass);
+        header[0].classList.add(nameClass);
         loginContainer.classList.add(nameClass);
     }
 }

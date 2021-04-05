@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Trivia app</title>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <header id="header_">
-            <h1>Trivia</h1>
-        </header>
 
-        <main>
-            <section id="login" class="login-container">
-                <!-- <form action="" id="loginForm" class="loginForm"> -->
-                    <p class="lblNickname">Nickname</p>
-                    <input type="text" placeholder="Nickname"
-                        class="txtNickname" id="nickname">
-                    <button class="btn-submit" id="btnSubmit">
-                        Click to game
-                    </button>
-                <!-- </form> -->
-            </section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia app</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-            <section id="topicGame" class="topicGame-container">
-                <button id="btnTopicOne" class="btn-topic" class="topic-1">
-                    <img src="./img/history.jpg" alt="">
-                    <h5 id="topicNameOne" class="topic-name-one">HISTORY</h5>
-                </button>
-                <button id="btnTopicTwo" class="btn-topic" class="topic-2">
-                    <img src="./img/sport.png
+<body>
+  <header>
+    <h1>Trivia</h1>
+  </header>
+
+  <main>
+    <section id="login" class="login-container">
+      <h3 class="circular">Game</h3>
+      <!-- <form action="" id="loginForm" class="loginForm"> -->
+      <p class="lblNickname">Nickname</p>
+      <input type="text" placeholder="Nickname" class="txtNickname" id="nickname">
+      <button class="btn-submit" id="btnSubmit">
+        Click to game
+      </button>
+      <!-- </form> -->
+    </section>
+
+    <section id="topicGame" class="topicGame-container">
+      <button id="btnTopicOne" class="btn-topic" class="topic-1">
+        <img src="./img/history.jpg" alt="">
+        <h5 id="topicNameOne" class="topic-name-one">HISTORY</h5>
+      </button>
+      <button id="btnTopicTwo" class="btn-topic" class="topic-2">
+        <img src="./img/sport.png
                     " alt="">
-                    <h5 id="topicNameTwo" class="topic-name-two">SPORTS</h5>
-                </button>
-            </section>
+        <h5 id="topicNameTwo" class="topic-name-two">SPORTS</h5>
+      </button>
+    </section>
 
-            <section id="questions" class="question-container">
-                <h2>Questions</h2>
-            </section>
+    <section id="questions" class="question-container">
+      <h2>Questions</h2>
+    </section>
 
-            <section id="answers" class="answer-container">
-                <button id="itemA" class="btnAnswer">A</button>
-                <button id="itemB" class="btnAnswer">B</button>
-                <button id="itemC" class="btnAnswer">C</button>
-                <button id="itemD" class="btnAnswer">D</button>
-            </section>
+    <section id="answers" class="answer-container">
+      <button id="itemA" class="btnAnswer">A</button>
+      <button id="itemB" class="btnAnswer">B</button>
+      <button id="itemC" class="btnAnswer">C</button>
+      <button id="itemD" class="btnAnswer">D</button>
+    </section>
 
-        </main>
-        <script src="./index.js"></script>
-    </body>
+  </main>
+  <script src="./index.js"></script>
+</body>
+
 </html>
