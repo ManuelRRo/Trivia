@@ -16,17 +16,20 @@ let listOfBookQuestion = ["The book “Da Vinci Code,” was written by who?", "
 let bookRightAnswer = ["Dan Brown", "Carrie", "First Impressions"];
 let bookWrongAnswer = ["George Orwell", "J.K Rowling", "Sam Collins", "It", "The Stand", "The Shinnig", "Emma", "Persuasion", " Lady Elizabeth"];
 let number = 0;
-loginContainer.classList.add('show');
+let topicId = "";
+
+addClass(loginContainer,"show");
 
 btnLogin.addEventListener("click",function () {
-  loginContainer.classList.remove('show');
-  topicContainer.classList.add('show');
+  removeClass(loginContainer,"show");
+  addClass(topicContainer,"show");
 });
 
 btnTopic.forEach(btn => {
   btn.addEventListener("click",function () {
-    topicContainer.classList.remove('show');
-    answerQuestionContainer.classList.add('show');
+    removeClass(topicContainer,"show");
+    addClass(answerQuestionContainer,"show");
+    idTopic = setId(btn);
   });
 });
 
@@ -43,4 +46,16 @@ function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+function removeClass(container,class_) {
+  container.classList.remove(class_);
+}
+
+function addClass(container,class_) {
+  container.classList.add(class_);
+}
+
+function setId(element_) {
+  return element_.id;
 }
