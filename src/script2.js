@@ -4,6 +4,10 @@ const btnTopic = document.querySelectorAll('.topic');
 
 const btnAnswer = document.querySelectorAll('.buttonGame');
 
+const btnReturn = document.getElementById('btn-return');
+
+const score = document.getElementById('score');
+
 const questionText = document.getElementById('question');
 
 const loginContainer = document.getElementById('login');
@@ -12,8 +16,12 @@ const topicContainer = document.getElementById('topic');
 
 const answerQuestionContainer = document.getElementById('Q-A-section');
 
+const scoreContainer = document.querySelector('.score-container');
+
 let listOfQuestion = [];
 let listOfAnswer = [];
+let listOfRightAnswer = [];
+
 let bookQuestion = ["The book “Da Vinci Code,” was written by who?", "What was Stephen King’s first published novel?", "What title did Jane Austen originally give to the book that was eventually published as Pride and Prejudice?"];
 let sciencieQuestion = ["What is the nearest planet to the sun?","How many teeth does an adult human have?","On what part of your body would you find the pinna?"];
 let historyQuestion = ["In which year did Hitler commit suicide?"," One of the ancient world wonders, the “Hanging Gardens,” was found in which city?","In 1927, who became the first man to fly solo and non-stop across the Atlantic?"];
@@ -32,6 +40,7 @@ let number_answer = 0;
 let topicId = "";
 let i = 0 ;
 let j = 3;
+let globalScore = 0;
 
 addClass(loginContainer,"show");
 
@@ -47,6 +56,7 @@ btnTopic.forEach(btn => {
     idTopic = setId(btn);
     listOfQuestion = buildListOfQuestion(idTopic);
     listOfAnswer = buildListOfAnswer(idTopic);
+    listOfRightAnswer = buildListOfRightAnswers(idTopic);
     showQuestion();
     btnAnswer.forEach(btn__ => {showAnswer(btn__,listOfAnswer);});
   });
@@ -56,9 +66,23 @@ btnAnswer.forEach(btn => {
   showAnswer(btn,listOfAnswer);
   btn.addEventListener("click",function () {
     showQuestion();
+    getUserAnswer(btn);
+    addPoints(getUserAnswer(btn));
     btnAnswer.forEach(btn__ => {showAnswer(btn__,listOfAnswer);});
+
+    if(i===2){
+      answerQuestionContainer.classList.add("hide");
+      scoreContainer.classList.add("show");
+    }
+    i++;
   });
 });
+
+// btnReturn.addEventListener('click',function () {
+//   scoreContainer.classList.add("hide");
+//   topicContainer.classList.add("show");
+//   globalScore = 0;
+// });
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -121,5 +145,33 @@ function buildListOfAnswer (idTopic__) {
   if (idTopic__ == 2) return bookAnswer.slice();
 
   if (idTopic__ == 3) return sciencieAnswer.slice();
+
+}
+
+function buildListOfRightAnswers (id_Topic) {
+
+  if (id_Topic == 1) return historyRightAnswer.slice();
+
+  if (id_Topic == 2) return bookRightAnswer.slice();
+
+  if (id_Topic == 3) return sciencieRightAnswer.slice();
+
+}
+
+function getUserAnswer (b_t_n) {
+
+  return b_t_n.innerText;
+
+}
+
+function addPoints (user_answer) {
+
+  listOfRightAnswer.forEach(right_answer => {
+    console.log (user_answer +" "+right_answer);
+    if(user_answer === right_answer){
+      globalScore+=10;
+    }
+    score.innerText = `SCORE OF ${globalScore} OF 30`;
+  });
 
 }
