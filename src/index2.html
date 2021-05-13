@@ -9,7 +9,9 @@
 
 <body>
   <header class="header">
-    <h1>Trivia Game</h1>
+    <div class="txt-container"><h1 class="header-name">Trivia Game</h1></div>
+    <div class="txt-container"><p class="nickname txt-margin" id="playerName"></p></div>
+
   </header>
 
   <main class="main">
@@ -17,7 +19,7 @@
       <section class="data-container">
         <label class="greeting circular padding-data-size margin-data-size">WELCOME</label>
         <label class="username">USERNAME</label>
-        <input type="text" placeholder="Type your username" class="txtUsername padding-data-size">
+        <input type="text" placeholder="Type your username" class="txtUsername padding-data-size" id ="username-txt">
         <button id="btnLogin" class="btn-login padding-data-size margin-data-size">Let's go</button>
       </section>
     </section>
@@ -48,7 +50,9 @@
       <p id="score" class="score-text"></p>
       <br>
       <br>
-      <button id="btn-return" class="btn-return">RETURN</button>
+      <button id="btn-return" class="btn-score-container">RETURN</button>
+      <br>
+      <button class="btn-score-container" id="newGame">NEW GAME</button>
 
     </section>
 

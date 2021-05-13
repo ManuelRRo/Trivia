@@ -1,3 +1,6 @@
+
+// buttons
+
 const btnLogin = document.getElementById('btnLogin');
 
 const btnTopic = document.querySelectorAll('.topic');
@@ -6,9 +9,19 @@ const btnAnswer = document.querySelectorAll('.buttonGame');
 
 const btnReturn = document.getElementById('btn-return');
 
+const btnNewGame = document.getElementById('newGame');
+
+// user text
+
+const userName = document.getElementById('username-txt');
+
+const nickName = document.getElementById('playerName');
+
 const score = document.getElementById('score');
 
 const questionText = document.getElementById('question');
+
+//Containers
 
 const loginContainer = document.getElementById('login');
 
@@ -17,6 +30,8 @@ const topicContainer = document.getElementById('topic');
 const answerQuestionContainer = document.getElementById('Q-A-section');
 
 const scoreContainer = document.querySelector('.score-container');
+
+
 
 let listOfQuestion = [];
 let listOfAnswer = [];
@@ -38,8 +53,7 @@ let historyAnswer = ["1945","1939","1944","1941","Babylon","Damascus","Israel","
 let number_question = 0;
 let number_answer = 0;
 let topicId = "";
-let i = 0 ;
-let j = 3;
+let questionsShowed = 0 ;
 let globalScore = 0;
 
 addClass(loginContainer,"show");
@@ -47,42 +61,63 @@ addClass(loginContainer,"show");
 btnLogin.addEventListener("click",function () {
   removeClass(loginContainer,"show");
   addClass(topicContainer,"show");
+  nickName.innerText = userName.value;
 });
 
 btnTopic.forEach(btn => {
   btn.addEventListener("click",function () {
     removeClass(topicContainer,"show");
     addClass(answerQuestionContainer,"show");
-    idTopic = setId(btn);
-    listOfQuestion = buildListOfQuestion(idTopic);
-    listOfAnswer = buildListOfAnswer(idTopic);
-    listOfRightAnswer = buildListOfRightAnswers(idTopic);
+    setupQuestionAnswer(btn);
     showQuestion();
-    btnAnswer.forEach(btn__ => {showAnswer(btn__,listOfAnswer);});
+    btnAnswer.forEach(btn__ => {setAnswer(btn__,listOfAnswer);});
   });
 });
 
 btnAnswer.forEach(btn => {
-  showAnswer(btn,listOfAnswer);
+  setAnswer(btn,listOfAnswer);
   btn.addEventListener("click",function () {
     showQuestion();
-    getUserAnswer(btn);
     addPoints(getUserAnswer(btn));
-    btnAnswer.forEach(btn__ => {showAnswer(btn__,listOfAnswer);});
+    btnAnswer.forEach(btn__ => {setAnswer(btn__,listOfAnswer);});
 
-    if(i===2){
-      answerQuestionContainer.classList.add("hide");
+    if(questionsShowed === 2){
+      answerQuestionContainer.classList.remove("show");
       scoreContainer.classList.add("show");
     }
-    i++;
+    questionsShowed++;
   });
 });
 
-// btnReturn.addEventListener('click',function () {
-//   scoreContainer.classList.add("hide");
-//   topicContainer.classList.add("show");
-//   globalScore = 0;
-// });
+btnReturn.addEventListener('click',function () {
+  scoreContainer.classList.remove("show");
+  topicContainer.classList.add("show");
+  emptyGlobalScore();
+  emptyQASection();
+  console.log(listOfQuestion);
+});
+
+btnNewGame.addEventListener('click', function () {
+  scoreContainer.classList.remove("show");
+  loginContainer.classList.add("show");
+  emptyGlobalScore();
+  emptyQASection();
+  nickName.innerText = "";
+  userName.value = "";
+});
+
+function emptyQASection(){
+  listOfAnswer = [];
+  listOfQuestion = [];
+  listOfRightAnswer = [];
+  number_answer = 0;
+  number_question = 0;
+  questionsShowed = 0;
+}
+
+function emptyGlobalScore () {
+  globalScore = 0;
+}
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -119,7 +154,7 @@ function showQuestion () {
   }
 }
 
-function showAnswer (__btn,__answer) {
+function setAnswer (__btn,__answer) {
   if(number_answer < __answer.length) {
 
     __btn.innerText = __answer[number_answer];
@@ -173,5 +208,14 @@ function addPoints (user_answer) {
     }
     score.innerText = `SCORE OF ${globalScore} OF 30`;
   });
+
+}
+
+function setupQuestionAnswer (btn) {
+
+  idTopic = setId(btn);
+  listOfQuestion = buildListOfQuestion(idTopic);
+  listOfAnswer = buildListOfAnswer(idTopic);
+  listOfRightAnswer = buildListOfRightAnswers(idTopic);
 
 }

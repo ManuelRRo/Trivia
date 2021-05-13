@@ -6,6 +6,27 @@ body {
 
 .header {
   height: 10vh;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.nickname {
+  margin: 0;
+  font-size: 2em;
+}
+
+.header-name {
+  margin: 0;
+  align-items:unset;
+}
+
+.txt-container {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
 }
 
 .main {
@@ -22,19 +43,10 @@ body {
   height: 10vh;
 }
 
-h1 {
-  margin: 0;
-  padding-top: 5px;
-}
-
 .question-text {
   margin:0;
   font-size: 30px;
   text-align: center;
-}
-
-p {
-  margin: 0;
 }
 
 .login-container {
@@ -64,20 +76,19 @@ p {
   box-shadow: 0 0 10px 2px;
   display: none;
   flex-wrap: wrap;
-  /* align-items: center; */
   justify-content: center;
-  height: 100%;
+  height: 90%;
   width: 50%;
 }
 
 .question-container {
   display: flex;
   align-items: center;
-  height: 50%
+  height: 45%
 }
 
 .answers-container {
-  height: 50%;
+  height: 45%;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -91,7 +102,7 @@ p {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 100%;
+  height: 90%;
   width: 50%;
   background-color: #d8e3e7;
   box-shadow: 5px 5px 5px 5px  #888888;
@@ -106,7 +117,7 @@ p {
   font-size: 175%;
 }
 
-.btn-return {
+.btn-score-container {
   font-size: 110%;
   width: 25vw;
   height: 10vh;
@@ -116,7 +127,7 @@ p {
 }
 
 .buttonGame {
-  margin: 10px;
+  margin: 8px;
   padding: 5%;
   font-size: 25px;
   border: 0;
