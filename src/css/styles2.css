@@ -2,14 +2,16 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
+  background-color: #c06014;
 }
 
 .header {
   height: 10vh;
-  background-color: blue;
+  background-color: #f3f4ed;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Roboto', sans-serif;
   
 }
 
@@ -29,11 +31,16 @@ body {
   width: 50vw;
 }
 
+.txt-footer {
+  color: white;
+}
+
 .main {
   align-items: center;
   display: flex;
   justify-content: center;
   height: 80vh;
+  font-family: 'Raleway', sans-serif;
 }
 
 .footer {
@@ -41,19 +48,21 @@ body {
   display: flex;
   justify-content: center;
   height: 10vh;
+  font-family: 'Raleway', sans-serif;
 }
 
 .question-text {
   margin:0;
   font-size: 30px;
   text-align: center;
+  color: white;
 }
 
 .login-container {
   align-items: center;
   display: none;
   justify-content: center;
-  background-color: gray;
+  background-color: #536162;
   height: 80%;
   width: 450px;
 }
@@ -104,26 +113,32 @@ body {
   flex-wrap: wrap;
   height: 90%;
   width: 50%;
-  background-color: #d8e3e7;
+  background-color: #536162;
   box-shadow: 5px 5px 5px 5px  #888888;
   border-radius: 12%;
 }
 
-.score-msg {
-  font-size: 250%;
+
+.btn-login{
+
+  font-size: 110%;
+  width: 25vw;
+  height: 10vh;
+  background-color: #c06014;
+  color: white;
+  border-radius: 5%;
+  font-family: 'Raleway', sans-serif;
 }
 
-.score-text {
-  font-size: 175%;
-}
 
 .btn-score-container {
   font-size: 110%;
   width: 25vw;
   height: 10vh;
-  background-color: #132c33;
-  border-radius: 5%;
+  background-color: #c06014;
   color: white;
+  border-radius: 5%;
+  font-family: 'Raleway', sans-serif;
 }
 
 .buttonGame {
@@ -133,23 +148,40 @@ body {
   border: 0;
   width: 20vw;
   border-radius: 30px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.btn-topic {
+  margin: 20px;
+  font-size: 40px;
+  background-color: #536162;
+  padding: 20px;
+  border-radius: 50%;
+  font-family: 'Raleway', sans-serif;
+}
+
+.score-msg {
+  font-size: 250%;
+  color: white;
+}
+
+.score-text {
+  font-size: 175%;
+  color: white;
 }
 
 .txtUsername {
   font-size: 15px;
 }
 
-.topic {
-  margin: 20px;
-  font-size: 40px;
-  background-color: green;
-  padding: 20px;
-  border-radius: 50%;
+.username {
+  color: white;
 }
 
 .circular {
   border-radius: 100%;
-  background-color:gold;
+  background-color:#424642;
+  color: white;
 }
 
 .padding-data-size {

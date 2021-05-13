@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <title>Trivia App</title>
   <link rel="stylesheet" href="css/styles2.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,15 +22,16 @@
       <section class="data-container">
         <label class="greeting circular padding-data-size margin-data-size">WELCOME</label>
         <label class="username">USERNAME</label>
+        <br>
         <input type="text" placeholder="Type your username" class="txtUsername padding-data-size" id ="username-txt">
         <button id="btnLogin" class="btn-login padding-data-size margin-data-size">Let's go</button>
       </section>
     </section>
 
     <section id="topic" class="topic-container">
-      <button id="1" class="topic">History</button>
-      <button id="2" class="topic">Books</button>
-      <button id="3" class="topic">Sciencie</button>
+      <button id="1" class="btn-topic">History</button>
+      <button id="2" class="btn-topic">Books</button>
+      <button id="3" class="btn-topic">Sciencie</button>
     </section>
 
     <section id="Q-A-section" class="Q-A-container">
@@ -59,7 +63,7 @@
   </main>
 
   <footer class="footer">
-    <p>Created By Manuel Rico</p>
+    <p class="txt-footer">Created By Manuel Rico</p>
   </footer>
 
   <script src="script2.js"></script>
