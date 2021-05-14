@@ -21,6 +21,8 @@ const score = document.getElementById('score');
 
 const questionText = document.getElementById('question');
 
+const errorMsg = document.getElementById('error-msg');
+
 //Containers
 
 const loginContainer = document.getElementById('login');
@@ -59,9 +61,20 @@ let globalScore = 0;
 addClass(loginContainer,"show");
 
 btnLogin.addEventListener("click",function () {
-  removeClass(loginContainer,"show");
-  addClass(topicContainer,"show");
-  showNickname();
+  if(isRightNickname()){
+    removeClass(loginContainer,"show");
+    addClass(topicContainer,"show");
+    showNickname();
+  }
+  else {
+    errorMsg.innerText = "Username must not have only number or empty";
+  }
+});
+
+userName.addEventListener("click",function () {
+
+  errorMsg.innerText = "";
+
 });
 
 btnTopic.forEach(btn => {
@@ -218,7 +231,6 @@ function getUserAnswer (b_t_n) {
 function addPoints (user_answer) {
 
   listOfRightAnswer.forEach(right_answer => {
-    console.log (user_answer +" "+right_answer);
     if(user_answer === right_answer){
       globalScore+=10;
     }
@@ -243,4 +255,12 @@ function showNickname () {
 function resetLoginData () {
   nickName.innerText = "";
   userName.value = "";
+}
+
+function isRightNickname() {
+
+  if(isNaN(userName.value)) return true;
+    
+  else return false;
+
 }
